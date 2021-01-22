@@ -6,12 +6,12 @@ this creates the user and validates their information with rules and middlewares
 doing some routes:
  #### Create(to create a new user)
  * Method:(POST)
- * http://localhost:3333/users
- body(JSON):
-{ 
-	"name": "yourLoginName",
-	"password": "YourPassword"
-}
+ * http://localhost:3333/users 
+ body(JSON):</br>
+{ </br>
+	"name": "yourLoginName", </br>
+	"password": "YourPassword" </br>
+}</br>
 
  #### Session(for user log in and generate some token validation).
  * Method:(POST)
