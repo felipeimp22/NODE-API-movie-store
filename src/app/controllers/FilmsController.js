@@ -18,6 +18,7 @@ async store(req, res){
       leased
     });
 }
+
 async lease(req,res){
   const schema = Yup.object().shape({
     id: Yup.string().required(),
@@ -36,6 +37,7 @@ async lease(req,res){
 
    return res.json(findFilm)
 }
+
 async returnFilm(req,res){
  const schema = Yup.object().shape({
     id: Yup.string().required(),
@@ -54,11 +56,21 @@ async returnFilm(req,res){
 
    return res.json(findFilm)
 }
+
 async availableFilms(req, res){
   const films = await Films.findAll({where:{leased: false}})
   const formatedListFilm = films.map(e => 
     { return{ title: e.title, movie_director: e.movie_director}})
   return res.json(formatedListFilm)
 }
+
+async findByTitle(req, res){
+  const {title} = req.params
+
+  const films = await Films.findAll({where:{title}})
+  const formatedListFilm = films.map(e => { return{ title: e.title, movie_director: e.movie_director, leased: e.leased}})
+  return res.json(formatedListFilm)
+}
+
 }
 export default new FilmsController();

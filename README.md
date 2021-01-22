@@ -20,7 +20,18 @@ or <br/>
 Make an api, connect in postgreSQL and set up with sequelize,
 this creates the user and validates their information with rules and middlewares and generates a security token,
 doing some routes:
+
+### About DataBase ?
+this project uses postgresSQL <br/>
+standart development configuration: <br/>
+  dialect: 'postgres',<br/>
+  host: 'localhost',<br/>
+  username: 'postgres',<br/>
+  password: 'postgres',<br/>
+  database: 'postgres',<br/>
+
 ### Routes:
+
  #### Create(to create a new user)
  * Method:(POST)<br/>
  * http://localhost:3333/users <br/>
@@ -87,6 +98,15 @@ doing some routes:
  body(JSON):<br/>
  NO BODY
 * OBS: on this route you need pass on Header, authorization:  Bearer acessToken
+
+ #### find By Title (find all films by title)
+ * Method:(GET)<br/>
+ * http://localhost:3333/findByTitle/:title <br/>
+ * this endpoint need a title params.
+ body(JSON):<br/>
+ NO BODY
+* OBS: on this route you need pass on Header, authorization:  Bearer acessToken
+
 
 ### Sequelize commands
 #### main command used

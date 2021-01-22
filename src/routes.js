@@ -21,6 +21,8 @@ routes.put('/users', UserController.update);
 
 
 routes.get('/availableFilms',FilmsController.availableFilms )
+routes.get('/findByTitle/:title',FilmsController.findByTitle )
+
 
 routes.post('/leasing',FilmsController.lease )
 routes.post('/returnFilm',FilmsController.returnFilm )
