@@ -9,6 +9,12 @@ Go to the project folder root in CMD and run: <br/>
 or <br/>
 > npm install <br/>
 
+#### Running Project
+after the project was installed, Go to the project folder root in CMD and run: <br/>
+> yarn dev <br/>
+or <br/>
+> npm run dev <br/>
+
 
 ## What does it do ?
 Make an api, connect in postgreSQL and set up with sequelize,
@@ -46,6 +52,40 @@ doing some routes:
 	"password": "1234567",<br/>
 	"confirmPassword": "1234567"<br/>
 }
+* OBS: on this route you need pass on Header, authorization:  Bearer acessToken
+
+ #### createFilms(create a film)
+ * Method:(POST)<br/>
+ * http://localhost:3333/createFilms
+ body(JSON):<br/>
+ { <br/>
+		"title": "Coringa",<br/>
+   		"movie_director": "Eu"<br/>
+}<br/>
+
+ #### leasing a Films(leasing a film)
+ * Method:(POST)<br/>
+ * http://localhost:3333/leasing
+ body(JSON):<br/>
+ { <br/>
+		"id":  ID of Movie <br/>
+}<br/>
+* OBS: on this route you need pass on Header, authorization:  Bearer acessToken
+
+ #### return a Film(return a film)
+ * Method:(POST)<br/>
+ * http://localhost:3333/returnFilm <br/>
+ body(JSON):<br/>
+ { <br/>
+		"id":  ID of Movie <br/>
+}<br/>
+* OBS: on this route you need pass on Header, authorization:  Bearer acessToken
+
+ #### available Film(find all available film)
+ * Method:(GET)<br/>
+ * http://localhost:3333/availableFilms <br/>
+ body(JSON):<br/>
+ NO BODY
 * OBS: on this route you need pass on Header, authorization:  Bearer acessToken
 
 ### Sequelize commands

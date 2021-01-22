@@ -1,12 +1,12 @@
 import Sequelize, { Model } from 'sequelize';
 
-class User extends Model {
+class Films extends Model {
   static init(sequelize) {
     super.init(
       {
-        name: Sequelize.STRING,
         title: Sequelize.STRING,
-        movieDirector: Sequelize.STRING
+        movie_director: Sequelize.STRING,
+        leased: Sequelize.BOOLEAN
       },
       {
         sequelize,
@@ -15,4 +15,4 @@ class User extends Model {
     return this;
   }
 }
-export default User;
+export default Films;

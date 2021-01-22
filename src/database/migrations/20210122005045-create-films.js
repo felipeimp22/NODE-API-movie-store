@@ -13,14 +13,28 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      movieDirector: {
+      movie_director: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      leased: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
     })
   },
 
   down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('users');
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
